@@ -1,0 +1,14 @@
+﻿@page
+@model dom3.Pages.People.CreateModel
+@{
+    ViewData["Title"] = "Добавление нового пользователя";
+}
+<h2>@ViewData["Title"]</h2>
+<div asp-validation-summary="All"></div>
+<form method="POST">
+    <div><label>Имя</label><br /><input asp-for="Person.Name" /></div>
+    <div><label>Возраст:</label><br /><input asp-for="Person.Age" type="number" /></div>
+    <div><label>Пин:</label><br /><input asp-for="Person.Pin" type="number" /></div>
+    <div><label>Деньги:</label><br /><input asp-for="Person.Money" type="number" /></div>
+    <input type="submit" value="Отправить" />
+</form>

@@ -1,0 +1,49 @@
+﻿@page "{id:int}"
+@model dom3.Pages.People.ProfileModel
+@{
+    ViewData["Title"] = "Редактирование пользователя";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Person.Id" type="hidden" />
+    <div style="display: none">
+        <label>Name</label>
+        <div>
+            <input asp-for="Person.Name" type="text"/>
+            <span asp-validation-for="Person.Name"></span>
+        </div>
+    </div>
+    <div style="display: none">
+        <label>Age</label>
+        <div>
+            <input asp-for="Person.Age" type="number" />
+            <span asp-validation-for="Person.Age"></span>
+        </div>
+    </div>
+    <div style="display: none">
+        <label>PIN</label>
+        <div>
+            <input asp-for="Person.Pin" type="number" />
+            <span asp-validation-for="Person.Pin"></span>
+        </div>
+    </div>
+    <div>
+        <label>Money</label>
+        <div>
+            <input maxlength="4" size="4" asp-for="Person.Money" type="number" id="myInput"/>
+            <span asp-validation-for="Person.Money"></span>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Сохранить" />
+    </div>
+</form>
+
+<script type="text/javascript">
+    $("#myInput").attr({
+       "max" : 10,
+       "min" : 2
+    });
+</script>

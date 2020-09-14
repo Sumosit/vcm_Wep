@@ -1,0 +1,13 @@
+﻿@page
+@model dom3.Pages.People.CheckPinModel
+@using dom3.Models
+@{
+    ViewData["Title"] = "Проверка ПИН-кода";
+}
+<h2>@ViewData["Title"]</h2>
+<div asp-validation-summary="All"></div>
+<form method="POST">
+    <div><label>Id</label><br /><input name="id" /></div>
+    <div><label>ПИН</label><br /><input name="newpin" placeholder="****" /></div>
+    <input type="submit" value="Отправить" />
+</form>
